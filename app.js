@@ -76,7 +76,7 @@ function fetch(date, kind) {
   });
 }
 
-function getDates( d1, d2 ){
+function getDates( d1, d2 ) {
   var oneDay = 24 * 3600 * 1000;
   var d = [];
   for (var ms = Number(d1) * 1, last = Number(d2) * 1; ms < last; ms += oneDay) {
@@ -87,8 +87,8 @@ function getDates( d1, d2 ){
 
 function formatDate(date) {
   var d = new Date(date);
-  var month = '' + (d.getMonth() + 1);
-  var day = '' + d.getDate();
+  var month = String(d.getMonth() + 1);
+  var day = String(d.getDate());
   var year = d.getFullYear();
 
   if (month.length < 2) month = '0' + month;
