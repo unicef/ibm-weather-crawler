@@ -1,3 +1,5 @@
 node {
-  echo 'hello world'
+  stage('Installing Dependencies') {
+    sh 'npm install'
+  }
 }
