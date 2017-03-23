@@ -8,7 +8,7 @@ var blob_key = config.blob.key1;
 var request = require('request');
 var fetchFromIbm = require('./fetchFromIbm');
 var uploadTextToBlob = require('./uploadTextToBlob');
-
+var moment = require('moment')
 // Loading env variables from .env file.
 
 
@@ -24,12 +24,7 @@ var blobSvc = blob.createBlobService();
 var container = require('./container/create_container.js');
 var weather_kinds = ['temperature']; //config.kinds;
 
-var date = process.argv[2] || null;
-
-if (date === null) {
-  console.log('You must provide a date usage {node app.js 2017-03-06}')
-  process.exit(9); // exit with invalid argument error
-}
+var date = moment().format('YYYY-MM-DD') //process.argv[2] || null;
 
 // weather_kinds.forEach(function(kind) {
   // blobSvc.createContainerIfNotExists(kind, {
