@@ -4,8 +4,7 @@ node {
     sh 'npm -v'
 
     stage('Installing Dependencies') {
-        sh 'git clone https://github.com/unicef/ibm-weather-crawler.git'
-        sh 'cd ibm-weather-crawler'
+        sh 'git clone https://github.com/unicef/ibm-weather-crawler.git .'
         sh 'npm install'
     }
 

@@ -1,6 +1,5 @@
-var config = require('./config/config');
 var request = require('request');
-var url = config.url;
+var url = 'http://unicefdata.mybluemix.net/get_data?date=';
 
 // function fetch(date, kind) {
 //   return new Promise(function(resolve, reject) {

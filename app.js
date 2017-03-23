@@ -1,16 +1,15 @@
 var dotenv = require('dotenv');
 dotenv.load();
 
-var config = require('./config/config');
+// var config = require('./config/config');
 var blob = require('azure-storage');
-var bluebird = require('bluebird');
-var blob_key = config.blob.key1;
-var request = require('request');
+// var bluebird = require('bluebird');
+// var blob_key = config.blob.key1;
+// var request = require('request');
 var fetchFromIbm = require('./fetchFromIbm');
 var uploadTextToBlob = require('./uploadTextToBlob');
-var moment = require('moment')
+var moment = require('moment');
 // Loading env variables from .env file.
-
 
 // AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_ACCESS_KEY env vars must be configured.
 if (!process.env.AZURE_STORAGE_ACCOUNT || !process.env.AZURE_STORAGE_ACCESS_KEY) {
@@ -18,10 +17,10 @@ if (!process.env.AZURE_STORAGE_ACCOUNT || !process.env.AZURE_STORAGE_ACCESS_KEY)
   process.exit(5); // exit with fatal error
 }
 
-var url = config.url;
+// var url = 'http://unicefdata.mybluemix.net/get_data?date=';
 
 var blobSvc = blob.createBlobService();
-var container = require('./container/create_container.js');
+// var container = require('./container/create_container.js');
 var weather_kinds = ['temperature']; //config.kinds;
 
 var date = moment().format('YYYY-MM-DD') //process.argv[2] || null;
@@ -57,7 +56,7 @@ var insureContainers = weather_kinds.map(function(kind) {
   });
 });
 
-Promise.all(insureContainers).then(fetchTodaysWeather)
+Promise.all(insureContainers).then(fetchTodaysWeather);
 
 function fetchTodaysWeather() {
   weather_kinds.forEach(function(kind) {
