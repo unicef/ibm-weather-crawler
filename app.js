@@ -21,9 +21,9 @@ if (!process.env.AZURE_STORAGE_ACCOUNT || !process.env.AZURE_STORAGE_ACCESS_KEY)
 
 var blobSvc = blob.createBlobService();
 // var container = require('./container/create_container.js');
-var weather_kinds = ['temperature']; //config.kinds;
+var weather_kinds = ['temperature', 'humidity', 'precipitation'];
 
-var date = moment().format('YYYY-MM-DD') //process.argv[2] || null;
+var date = moment().format('YYYY-MM-DD');
 
 // weather_kinds.forEach(function(kind) {
   // blobSvc.createContainerIfNotExists(kind, {
